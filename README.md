@@ -133,6 +133,31 @@ The project focuses on five major analytical areas:
 
 ---
 
+# 📋 Business Analysis Layer
+
+To complement the analytical workflow, the project includes a structured Business Analysis layer that translates the business problem into measurable analytical requirements and validates the resulting solution.
+
+The documentation covers:
+
+- **Business Requirements Document (BRD)** — business problem, objectives, stakeholders, KPIs, requirements, constraints, and success criteria.
+- **Functional Requirements Document (FRD)** — functional/non-functional requirements, business rules, reporting requirements, and expected outputs.
+- **Stakeholder Matrix** — stakeholder personas, information needs, KPIs, and dashboard mapping.
+- **Process & Gap Analysis** — AS-IS process, identified business gaps, TO-BE analytical process, and gap-to-solution mapping.
+- **User Stories & Acceptance Criteria** — business-user needs translated into testable requirements.
+- **Data Dictionary & Data Mapping** — business meaning, source fields, KPI definitions, data lineage, and requirement-to-data mapping.
+- **UAT Test Cases** — project-level acceptance scenarios for dashboards, KPIs, business rules, and analytical outputs.
+- **Defect Log** — documented development/validation issues and their resolutions.
+- **Change Request** — documented project-level requirement and analytical enhancements.
+- **Requirements Traceability Matrix (RTM)** — links business requirements to functional requirements, user stories, analytical outputs, dashboards, and validation.
+
+### Business-to-Analytics Traceability
+
+**Business Problem → Requirements → User Stories → Data → Analytics → Dashboard → Validation → Business Insights**
+
+> The BA artifacts represent project-defined stakeholder personas, requirements, and validation scenarios. They do not claim formal requirements gathering, stakeholder sign-off, or enterprise UAT experience.
+
+---
+
 # 🛠️ Technology Stack
 
 ### Programming & Data Analysis
@@ -166,6 +191,20 @@ The project focuses on five major analytical areas:
 - Jupyter Notebook
 - Git
 - GitHub
+
+### Business Analysis
+
+- Business Requirements (BRD)
+- Functional Requirements (FRD)
+- Stakeholder Analysis
+- User Stories
+- Acceptance Criteria
+- Process & Gap Analysis
+- Data Mapping & Data Dictionary
+- UAT
+- Requirements Traceability
+- Defect Tracking
+- Change Management
 
 ---
 
@@ -534,7 +573,7 @@ High Risk
 
 # ⚠️ Churn Model Limitation
 
-The current churn classification is intended as an analytical portfolio exercise.
+The current churn classification is intended as an analytical portfolio exercise and should be interpreted as a risk-classification analysis rather than a production decisioning system.
 
 The churn label is based on customer recency, while the model uses customer-level historical features. Because the current implementation uses full-history customer information, it should not be treated as a production-ready forward-looking churn model.
 
@@ -546,29 +585,9 @@ A production implementation would require a temporal snapshot approach, where cu
 
 The Power BI dashboard contains six analytical pages designed around business questions.
 
-## Executive Overview
+The repository includes screenshots of all six dashboard pages under `docs/screenshots/`. The editable `.pbix` file is retained locally rather than committed to the public repository.
 
-![Executive Overview](docs/screenshots/01_executive_overview.png)
-
-## Customer Retention
-
-![Customer Retention](docs/screenshots/02_customer_retention.png)
-
-## Fulfillment & Logistics
-
-![Fulfillment & Logistics](docs/screenshots/03_fulfillment_logistics.png)
-
-## Customer Experience
-
-![Customer Experience](docs/screenshots/04_customer_experience.png)
-
-## Profitability & Product Performance
-
-![Profitability & Product Performance](docs/screenshots/05_profitability_product.png)
-
-## Root Cause Analysis
-
-![Root Cause Analysis](docs/screenshots/06_root_cause_analysis.png)
+## 1️⃣ Executive Overview
 
 ### KPIs
 
@@ -637,7 +656,7 @@ The Power BI dashboard contains six analytical pages designed around business qu
 
 ### Visualizations
 
-- Product/category revenue and contribution analysis
+- Product/category revenue analysis
 - Average product price by category
 - Product price vs freight cost
 - Top product categories by revenue
@@ -763,7 +782,8 @@ Total Customers         : 96,096
 Product Revenue         : 13,591,643.70
 Freight Cost            : 2,251,909.54
 Total Order Value       : 15,843,553.24
-Average Order Value     : 159.33
+Average Product Revenue per Order : 136.68
+Average Total Order Value (incl. freight) : 159.33
 Average Review Score    : 4.09
 Delivered Orders        : 96,476
 Late Deliveries         : 7,827
@@ -944,13 +964,19 @@ python python/churn_model.py
 
 ## 11. Open Power BI
 
-Open:
+The editable Power BI `.pbix` file is maintained locally.
 
 ```text
 powerbi/ECommerce_Analytics_Platform.pbix
 ```
 
 Refresh the PostgreSQL data connection if required.
+
+Dashboard screenshots are available in:
+
+```text
+docs/screenshots/
+```
 
 ---
 
@@ -970,6 +996,12 @@ The `.gitignore` file prevents accidental commits of:
 - Temporary files
 - Notebook checkpoints
 - Power BI template files
+
+Business Analysis documentation is version-controlled under:
+
+```text
+docs/business_analysis/
+```
 
 ---
 
@@ -1009,6 +1041,25 @@ The `.gitignore` file prevents accidental commits of:
 
 ---
 
+# 💼 Business & Analytical Outcomes
+
+The platform supports business users in:
+
+- Monitoring executive KPIs and business trends.
+- Identifying regions with higher fulfillment issues.
+- Understanding the relationship between delivery performance and customer satisfaction.
+- Segmenting customers using RFM analysis.
+- Identifying analytical churn-risk segments.
+- Evaluating product/category revenue performance.
+- Monitoring freight cost and order economics.
+- Investigating operational root causes.
+- Translating business objectives into measurable requirements and KPIs.
+- Validating analytical outputs through documented testing and project-level UAT scenarios.
+
+The solution is designed as a decision-support platform: analytical findings highlight patterns and areas for investigation rather than claiming causal explanations or guaranteed business outcomes.
+
+---
+
 # 🚀 Project Outcome
 
 This project demonstrates a complete end-to-end analytics workflow:
@@ -1039,6 +1090,11 @@ The project demonstrates how raw transactional data can be transformed into a st
 - Business-focused root-cause analysis
 - Action-oriented business recommendations
 - Reproducible project structure
+- Business requirements and functional requirements documentation
+- Stakeholder analysis and process/gap analysis
+- User stories and acceptance criteria
+- UAT, defect and change documentation
+- End-to-end requirements traceability
 
 ---
 
@@ -1068,6 +1124,16 @@ Excel
 Data Visualization
 Business Intelligence
 Data Modeling
+Business Requirements
+Functional Requirements
+Stakeholder Analysis
+User Stories
+Acceptance Criteria
+Process & Gap Analysis
+UAT
+Requirements Traceability
+Defect Tracking
+Change Management
 Git
 GitHub
 ```
