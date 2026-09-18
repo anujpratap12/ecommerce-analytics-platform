@@ -1,0 +1,10 @@
+analysis,test,sample_size,statistic,p_value,effect_size,interpretation,statistically_significant
+Delivery Days vs Review Score,Pearson correlation,95830,-0.33430172203655784,0.0,-0.33430172203655784,Negative association between delivery duration and review score,True
+Delivery Delay vs Review Score,Pearson correlation,95830,-0.2666425452084423,0.0,-0.2666425452084423,Negative association between delivery delay and review score,True
+Freight Cost vs Order Value,Pearson correlation,98666,0.41278641970408286,0.0,0.41278641970408286,Positive association between order value and freight cost,True
+Freight Ratio vs Order Value,Pearson correlation,98666,-0.29649334671524996,0.0,-0.29649334671524996,Negative association between order value and freight ratio,True
+Late vs On-Time Review Scores,Welch t-test,95830,-89.38449012007375,0.0,-1.7275883057642898,Compares mean review scores between late and on-time deliveries,True
+Late vs On-Time Low Satisfaction,Chi-square test,95830,12656.583217785634,0.0,44.8470660091715,Compares low-satisfaction proportions between late and on-time deliveries,True
+Average Delivery Time,95% Confidence Interval,96476,12.558702304032053,,,Confidence interval for the mean delivery time,False
+Average Review Score,95% Confidence Interval,98673,4.0867934152875325,,,Confidence interval for the mean review score,False
+State Avg Delivery Days vs Avg Review,Pearson correlation,26,-0.3877850993301109,0.050294934438711546,-0.3877850993301109,State-level association between average delivery time and average review score,False

@@ -1,0 +1,10 @@
+feature,coefficient,absolute_coefficient,direction
+avg_delivery_days,0.9655677866289589,0.9655677866289589,Positive association with churn
+late_delivery_rate,-0.3438837951454224,0.3438837951454224,Negative association with churn
+total_freight,-0.30058194289367396,0.30058194289367396,Negative association with churn
+total_order_value,0.12724412668161003,0.12724412668161003,Positive association with churn
+avg_order_value,-0.09332547037446924,0.09332547037446924,Negative association with churn
+avg_freight_ratio,-0.06599152866977882,0.06599152866977882,Negative association with churn
+avg_review_score,-0.0648377267796782,0.0648377267796782,Negative association with churn
+low_satisfaction_rate,-0.017892824257491054,0.017892824257491054,Negative association with churn
+total_orders,0.009762490915652854,0.009762490915652854,Positive association with churn

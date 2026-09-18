@@ -1,0 +1,6 @@
+metric,value,ci_lower,ci_upper
+Average Delivery Days,12.558702304032053,12.498461684284303,12.618942923779803
+Average Review Score,4.0867934152875325,4.078393250872924,4.095193579702141
+Late Delivery Review Difference,-1.7275883057642898,,
+Late Low Satisfaction Rate,54.11119812059515,,
+On-Time Low Satisfaction Rate,9.264132111423645,,
