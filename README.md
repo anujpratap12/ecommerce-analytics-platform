@@ -587,7 +587,29 @@ The Power BI dashboard contains six analytical pages designed around business qu
 
 The repository includes screenshots of all six dashboard pages under `docs/screenshots/`. The editable `.pbix` file is retained locally rather than committed to the public repository.
 
-## 1️⃣ Executive Overview
+### 1️⃣ Executive Overview
+
+![Executive Overview](docs/screenshots/01_executive_overview.png)
+
+### 2️⃣ Customer Retention
+
+![Customer Retention](docs/screenshots/02_customer_retention.png)
+
+### 3️⃣ Fulfillment & Logistics
+
+![Fulfillment & Logistics](docs/screenshots/03_fulfillment_logistics.png)
+
+### 4️⃣ Customer Experience
+
+![Customer Experience](docs/screenshots/04_customer_experience.png)
+
+### 5️⃣ Profitability & Product Performance
+
+![Profitability & Product Performance](docs/screenshots/05_profitability_product.png)
+
+### 6️⃣ Root Cause Analysis
+
+![Root Cause Analysis](docs/screenshots/06_root_cause_analysis.png)
 
 ### KPIs
 
