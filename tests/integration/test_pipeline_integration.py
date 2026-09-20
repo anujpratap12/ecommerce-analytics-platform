@@ -1,9 +1,12 @@
 from pathlib import Path
 
-import pandas as pd
 from sqlalchemy import text
 
-from etl.build_features import build_order_features, build_product_features, load_data
+from etl.build_features import (
+    build_order_features,
+    build_product_features,
+    load_data,
+)
 from python.db_connection import engine
 
 
@@ -16,7 +19,6 @@ def test_feature_engineering_integration():
     Verify that cleaned datasets can be loaded and integrated
     into the analytical order and product datasets.
     """
-
     data = load_data()
 
     (
@@ -93,9 +95,7 @@ def test_postgresql_integration():
     staging and analytics schemas/tables and that analytics
     tables contain data.
     """
-
     with engine.connect() as connection:
-
         # Verify required schemas.
         schemas = connection.execute(
             text(
@@ -159,9 +159,7 @@ def test_postgresql_analytics_data_integrity():
     """
     Verify basic integrity conditions on the loaded analytical data.
     """
-
     with engine.connect() as connection:
-
         # Every analytical order should have an order_id.
         missing_order_ids = connection.execute(
             text(
@@ -200,3 +198,38 @@ def test_postgresql_analytics_data_integrity():
         ).scalar_one()
 
         assert invalid_late_flags == 0
+
+
+def test_business_analytics_integration():
+    """
+    Validate that the PostgreSQL analytics layer can execute
+    a business-facing aggregation and return valid results.
+    """
+    with engine.connect() as connection:
+        results = connection.execute(
+            text(
+                """
+                SELECT
+                    customer_state,
+                    COUNT(DISTINCT order_id) AS order_count,
+                    ROUND(
+                        AVG(order_total_value)::numeric,
+                        2
+                    ) AS average_order_value
+                FROM analytics.order_analytics
+                WHERE customer_state IS NOT NULL
+                GROUP BY customer_state
+                HAVING COUNT(DISTINCT order_id) >= 100
+                ORDER BY order_count DESC
+                LIMIT 10;
+                """
+            )
+        ).all()
+
+        assert len(results) == 10
+
+        for row in results:
+            assert row[0] is not None
+            assert row[1] >= 100
+            assert row[2] is not None
+            assert row[2] >= 0
