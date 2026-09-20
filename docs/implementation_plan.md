@@ -158,31 +158,77 @@ Build an end-to-end e-commerce analytics platform that transforms raw Olist Braz
 
 
 
-The project follows an iterative development approach with incremental implementation and validation across the data engineering, analytics, business-analysis, and visualization layers.
+The project follows an iterative development approach with incremental
+
+implementation and validation across the data engineering, analytics,
+
+business-analysis, and visualization layers.
 
 
 
-Development activities include:
+The implementation lifecycle is organized into sequential phases:
 
 
 
-\- Incremental implementation of project components.
+1\. Business problem definition
 
-\- Data-quality validation after processing stages.
+2\. Requirements analysis
 
-\- Automated integration testing.
+3\. Technical design
 
-\- Requirements traceability.
+4\. Data inspection and validation
 
-\- UAT validation.
+5\. Data cleaning and feature engineering
 
-\- Defect tracking.
+6\. Database implementation
 
-\- Technical and business documentation.
+7\. Analytics and statistical analysis
 
-\- Iterative refinement of analytical outputs and dashboards.
+8\. Dashboard development
+
+9\. Testing and validation
+
+10\. UAT and documentation
 
 
+
+Within each phase, outputs are validated before progressing to dependent
+
+activities. Development activities include:
+
+
+
+\- Incremental implementation of project components
+
+\- Data-quality validation after processing stages
+
+\- Automated integration testing
+
+\- Requirements traceability
+
+\- UAT validation
+
+\- Defect tracking
+
+\- Technical and business documentation
+
+\- Iterative refinement of analytical outputs and dashboards
+
+
+
+\### Quality and Validation Approach
+
+
+
+Quality assurance is incorporated throughout the implementation lifecycle
+
+rather than being limited to the final stage. Data validation is performed
+
+during ETL, automated integration tests validate component interactions,
+
+SQL checks validate analytical data, and UAT scenarios validate business
+
+requirements and expected outputs.
 
 \## 4. Implementation Deliverables
 
